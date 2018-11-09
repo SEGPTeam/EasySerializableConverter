@@ -9,6 +9,7 @@ namespace EasySerializableConverterLib
     // helper class for testing this system until a .js, .ts, and .cs parser is completed.
     public class TTestData
     {
+        //TODO we need better tests
         public static ClClass CreateTestClassPrimitive()
         {
             var output = new ClClass("Primitive Class");

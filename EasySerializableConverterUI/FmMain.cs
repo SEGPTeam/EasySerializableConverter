@@ -39,6 +39,7 @@ namespace EasySerializableConverterUI
             }
         }
 
+        //TODO these should be removed and replaced with a source file (.js .ts .cs) reader that outputs a ClClass instance.
         private void BtnTestA_Click(object sender, EventArgs e)
         {
             DeployClass(TTestData.CreateTestClassPrimitive());

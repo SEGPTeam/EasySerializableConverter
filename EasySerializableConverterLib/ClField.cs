@@ -20,7 +20,7 @@ namespace EasySerializableConverterLib
 
         public ClField() : this("Unnamed Field", typeof(object))
         {
-            //TODO
+
         }
 
         public ClField(ClField input)
