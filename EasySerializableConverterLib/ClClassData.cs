@@ -31,5 +31,15 @@ namespace EasySerializableConverterLib
                 FieldDatas.Add(new ClFieldData(f)); // populates field data list with new instances constructed from field data
             }
         }
+
+        public ClClassData(ClClass classType) : this ("Unnamed Instance", classType)
+        {
+
+        }
+
+        public ClClassData() : this ("Unnamed Instance", new ClClass())
+        {
+
+        }
     }
 }
