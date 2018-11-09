@@ -8,6 +8,11 @@ namespace EasySerializableConverterLib
 {
     public class ClEnumerableField : ClField
     {
-        //TODO: add enumerable specific functions
+        public bool IsAnEnumerable { get; set; }
+
+        public ClEnumerableField(string name, Type fieldType, bool isEnumerable = true) : base(name, fieldType)
+        {
+            IsAnEnumerable = isEnumerable;
+        }
     }
 }

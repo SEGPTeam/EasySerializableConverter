@@ -8,12 +8,12 @@ namespace EasySerializableConverterLib
 {
     public class ClFieldData
     {
-        public ClField FieldInfo { get; set; }
+        public string FieldName { get; set; }
         public object FieldData { get; set; }
 
-        public ClFieldData(ClField fieldInfo, object fieldData)
+        public ClFieldData(ClField fieldType, object fieldData)
         {
-            FieldInfo = fieldInfo;
+            FieldName = fieldType.Name;
             FieldData = fieldData;
         }
 

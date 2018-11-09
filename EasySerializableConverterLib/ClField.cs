@@ -23,5 +23,11 @@ namespace EasySerializableConverterLib
             //TODO
         }
 
+        public ClField(ClField input)
+        {
+            Name = input.Name;
+            FieldType = input.FieldType;
+        }
+
     }
 }
