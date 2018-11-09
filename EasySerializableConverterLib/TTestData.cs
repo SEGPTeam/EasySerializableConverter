@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace EasySerializableConverterLib
 {
     // helper class for testing this system until a .js, .ts, and .cs parser is completed.
-    public class TTesstData
+    public class TTestData
     {
         public static ClClass CreateTestClassPrimitive()
         {
@@ -29,7 +29,7 @@ namespace EasySerializableConverterLib
             output.Fields.Add(new ClField("Int Field", typeof(int)));
             output.Fields.Add(new ClField("Byte Field", typeof(byte)));
             output.Fields.Add(new ClField("String Field", typeof(string)));
-            output.Fields.Add(new ClField("List Int Field", typeof(List<int>)));
+            output.Fields.Add(new ClEnumerableField("List Int Field", typeof(int)));
 
             return output;
         }
