@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClClass.cs" />
+    <Compile Include="ClClassData.cs" />
     <Compile Include="ClEnumerableField.cs" />
     <Compile Include="ClField.cs" />
+    <Compile Include="ClFieldData.cs" />
     <Compile Include="MdCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TTesstData.cs" />
