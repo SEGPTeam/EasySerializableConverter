@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using EasySerializableConverterLib;
 namespace EasySerializableConverterUI
 {
-    public partial class Form1 : Form
+    public partial class FmMain : Form
     {
-        public Form1()
+        public FmMain()
         {
             InitializeComponent();
             MessageBox.Show(MdCore.IsEnumerable(new List<object>()).ToString());

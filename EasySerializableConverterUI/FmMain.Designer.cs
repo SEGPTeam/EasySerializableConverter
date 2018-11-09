@@ -1,6 +1,6 @@
 ﻿namespace EasySerializableConverterUI
 {
-    partial class Form1
+    partial class FmMain
     {
         /// <summary>
         /// Required designer variable.
