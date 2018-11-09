@@ -15,7 +15,6 @@ namespace EasySerializableConverterUI
         public FmMain()
         {
             InitializeComponent();
-            MessageBox.Show(MdCore.IsEnumerable(new List<object>()).ToString());
         }
     }
 }
