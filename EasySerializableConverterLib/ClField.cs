@@ -10,15 +10,18 @@ namespace EasySerializableConverterLib
     {
         public string Name { get; set; }
         public Type FieldType { get; set; }
-        public ClField()
-        {
-            //TODO
-        }
 
-        public ClField(string name, Type fieldType) : this()
+        public ClField(string name, Type fieldType)
         {
             Name = name;
             FieldType = fieldType;
         }
+
+
+        public ClField() : this("Unnamed Field", typeof(object))
+        {
+            //TODO
+        }
+
     }
 }
