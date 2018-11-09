@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FieldUIs\UCIntegerUI.cs">
+    <Compile Include="FieldUIs\UCEnumerableUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FieldUIs\UCIntegerUI.Designer.cs">
-      <DependentUpon>UCIntegerUI.cs</DependentUpon>
+    <Compile Include="FieldUIs\UCEnumerableUI.Designer.cs">
+      <DependentUpon>UCEnumerableUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldUIs\UCPrimitiveUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldUIs\UCPrimitiveUI.Designer.cs">
+      <DependentUpon>UCPrimitiveUI.cs</DependentUpon>
     </Compile>
     <Compile Include="FmMain.cs">
       <SubType>Form</SubType>
@@ -61,8 +67,14 @@
     <Compile Include="IFieldUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FieldUIs\UCIntegerUI.resx">
-      <DependentUpon>UCIntegerUI.cs</DependentUpon>
+    <EmbeddedResource Include="FieldUIs\UCEnumerableUI.resx">
+      <DependentUpon>UCEnumerableUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldUIs\UCPrimitiveUI.resx">
+      <DependentUpon>UCPrimitiveUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmMain.resx">
+      <DependentUpon>FmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +103,9 @@
       <Project>{55553282-c96d-4a3e-b688-5f9d6b1ab1b9}</Project>
       <Name>EasySerializableConverterLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
