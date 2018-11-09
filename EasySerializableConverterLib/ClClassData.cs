@@ -11,8 +11,10 @@ namespace EasySerializableConverterLib
         public string ClassName { get; set; }
         public string InstanceName { get; set; }
         public List<ClFieldData> FieldDatas { get; set; }
+        public List<ClEnumerableFieldData> EnumerableFieldDatas { get; set; }
 
-        public ClClassData(string instanceName, string className, List<ClFieldData> fieldDatas)
+
+        public ClClassData(string instanceName, string className, List<ClFieldData> fieldDatas, List<ClEnumerableFieldData> enumerableFieldDatas)
         {
             ClassName = className;
             InstanceName = instanceName;
@@ -22,9 +24,14 @@ namespace EasySerializableConverterLib
             {
                 FieldDatas.Add(f);
             }
+            EnumerableFieldDatas = new List<ClEnumerableFieldData>();
+            foreach (var ef in enumerableFieldDatas)
+            {
+                EnumerableFieldDatas.Add(ef);
+            }
         }
 
-        public ClClassData(string instanceName, ClClass classType) : this(instanceName, classType.ClassName, new List<ClFieldData>())
+        public ClClassData(string instanceName, ClClass classType) : this(instanceName, classType.ClassName, new List<ClFieldData>(), new List<ClEnumerableFieldData>())
         {
             foreach (var f in classType.Fields)
             {
