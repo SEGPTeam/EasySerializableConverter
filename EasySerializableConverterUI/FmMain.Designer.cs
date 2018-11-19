@@ -41,20 +41,20 @@
             this.BtnTestA.Location = new System.Drawing.Point(16, 15);
             this.BtnTestA.Margin = new System.Windows.Forms.Padding(4);
             this.BtnTestA.Name = "BtnTestA";
-            this.BtnTestA.Size = new System.Drawing.Size(235, 28);
+            this.BtnTestA.Size = new System.Drawing.Size(172, 28);
             this.BtnTestA.TabIndex = 1;
-            this.BtnTestA.Text = "Load tes with primitive data types";
+            this.BtnTestA.Text = "Load javascript file";
             this.BtnTestA.UseVisualStyleBackColor = true;
             this.BtnTestA.Click += new System.EventHandler(this.BtnTestA_Click);
             // 
             // BtnTestB
             // 
-            this.BtnTestB.Location = new System.Drawing.Point(259, 15);
+            this.BtnTestB.Location = new System.Drawing.Point(196, 15);
             this.BtnTestB.Margin = new System.Windows.Forms.Padding(4);
             this.BtnTestB.Name = "BtnTestB";
-            this.BtnTestB.Size = new System.Drawing.Size(297, 28);
+            this.BtnTestB.Size = new System.Drawing.Size(172, 28);
             this.BtnTestB.TabIndex = 2;
-            this.BtnTestB.Text = "Load test with enumerable";
+            this.BtnTestB.Text = "Load C# file";
             this.BtnTestB.UseVisualStyleBackColor = true;
             this.BtnTestB.Click += new System.EventHandler(this.BtnTestB_Click);
             // 

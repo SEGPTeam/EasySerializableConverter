@@ -82,7 +82,7 @@ namespace EasySerializableConverterUI.FieldUIs
             }
             else
             {
-                MessageBox.Show("Error: there are syntax errors in the instance editor.");
+                MessageBox.Show("Error: there are syntax errors in the instance editor for " + TBName.Text);
                 return null;
             }
         }
