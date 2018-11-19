@@ -55,6 +55,7 @@
     <Compile Include="CreateJson.cs" />
     <Compile Include="MdCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadJsFile.cs" />
     <Compile Include="TTestData.cs" />
   </ItemGroup>
   <ItemGroup>
