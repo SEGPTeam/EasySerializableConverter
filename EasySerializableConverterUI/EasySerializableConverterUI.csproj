@@ -67,10 +67,10 @@
     <Compile Include="IFieldUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCInstanceEditor.cs">
+    <Compile Include="FieldUIs\UCInstanceEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCInstanceEditor.Designer.cs">
+    <Compile Include="FieldUIs\UCInstanceEditor.Designer.cs">
       <DependentUpon>UCInstanceEditor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FieldUIs\UCEnumerableUI.resx">
@@ -91,7 +91,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UCInstanceEditor.resx">
+    <EmbeddedResource Include="FieldUIs\UCInstanceEditor.resx">
       <DependentUpon>UCInstanceEditor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
