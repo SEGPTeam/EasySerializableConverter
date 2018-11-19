@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EasySerializableConverterLib.ClClass">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>ClClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.ClClassData">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACACAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClClassData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.ClEnumerableField">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClEnumerableField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.ClEnumerableFieldData">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClEnumerableFieldData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.ClField">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.ClFieldData">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ClFieldData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.CreateJson">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>CreateJson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.MyDate">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CreateJson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.Lad">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>CreateJson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.MdCore">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAACBgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MdCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.LoadJsFile">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAABBAAAAAIAAAAAIKAAAABAAgAAAAAQ=</HashCode>
+      <FileName>ReadJsFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterLib.TTestData">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TTestData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EasySerializableConverterUI.FieldUIs.UCEnumerableUI">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQABACCAAAQAAAAiAAAAKAAAACAAkAAGAAQAgAAA=</HashCode>
+      <FileName>FieldUIs\UCEnumerableUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterUI.FieldUIs.UCInstanceEditor">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAQAACAhAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>FieldUIs\UCInstanceEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterUI.FieldUIs.UCPrimitiveUI">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABACCAAAQAAAAiAAAAKAAAACAAkAACAAQAgAAA=</HashCode>
+      <FileName>FieldUIs\UCPrimitiveUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterUI.FmMain">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACACAAAAAACgIAACABAKAAAAEEAAAAAABQA=</HashCode>
+      <FileName>FmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterUI.Program">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterUI.Properties.Resources">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySerializableConverterUI.Properties.Settings">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EasySerializableConverterUI.IFieldUI">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IFieldUI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
