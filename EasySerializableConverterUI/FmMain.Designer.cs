@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmMain));
             this.FLPMain = new System.Windows.Forms.FlowLayoutPanel();
             this.BtnTestA = new System.Windows.Forms.Button();
             this.BtnTestB = new System.Windows.Forms.Button();
@@ -42,17 +43,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FLPMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FLPMain.Location = new System.Drawing.Point(12, 41);
+            this.FLPMain.Location = new System.Drawing.Point(16, 50);
+            this.FLPMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FLPMain.Name = "FLPMain";
-            this.FLPMain.Size = new System.Drawing.Size(776, 368);
+            this.FLPMain.Size = new System.Drawing.Size(1124, 556);
             this.FLPMain.TabIndex = 0;
             this.FLPMain.WrapContents = false;
             // 
             // BtnTestA
             // 
-            this.BtnTestA.Location = new System.Drawing.Point(12, 12);
+            this.BtnTestA.Location = new System.Drawing.Point(16, 15);
+            this.BtnTestA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnTestA.Name = "BtnTestA";
-            this.BtnTestA.Size = new System.Drawing.Size(176, 23);
+            this.BtnTestA.Size = new System.Drawing.Size(235, 28);
             this.BtnTestA.TabIndex = 1;
             this.BtnTestA.Text = "Load tes with primitive data types";
             this.BtnTestA.UseVisualStyleBackColor = true;
@@ -60,9 +63,10 @@
             // 
             // BtnTestB
             // 
-            this.BtnTestB.Location = new System.Drawing.Point(194, 12);
+            this.BtnTestB.Location = new System.Drawing.Point(259, 15);
+            this.BtnTestB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnTestB.Name = "BtnTestB";
-            this.BtnTestB.Size = new System.Drawing.Size(223, 23);
+            this.BtnTestB.Size = new System.Drawing.Size(297, 28);
             this.BtnTestB.TabIndex = 2;
             this.BtnTestB.Text = "Load test with enumerable";
             this.BtnTestB.UseVisualStyleBackColor = true;
@@ -71,9 +75,10 @@
             // BtnSave
             // 
             this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSave.Location = new System.Drawing.Point(713, 415);
+            this.BtnSave.Location = new System.Drawing.Point(1040, 614);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(75, 23);
+            this.BtnSave.Size = new System.Drawing.Size(100, 28);
             this.BtnSave.TabIndex = 3;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
@@ -82,32 +87,36 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(454, 17);
+            this.label2.Location = new System.Drawing.Point(605, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Instance Name:";
             // 
             // TBInstanceName
             // 
-            this.TBInstanceName.Location = new System.Drawing.Point(542, 14);
+            this.TBInstanceName.Location = new System.Drawing.Point(723, 17);
+            this.TBInstanceName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TBInstanceName.Name = "TBInstanceName";
-            this.TBInstanceName.Size = new System.Drawing.Size(246, 20);
+            this.TBInstanceName.Size = new System.Drawing.Size(327, 22);
             this.TBInstanceName.TabIndex = 6;
             // 
             // FmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1156, 657);
             this.Controls.Add(this.TBInstanceName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnTestB);
             this.Controls.Add(this.BtnTestA);
             this.Controls.Add(this.FLPMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FmMain";
-            this.Text = "Form1";
+            this.Text = "EasySerializableConverter";
             this.ResumeLayout(false);
             this.PerformLayout();
 
