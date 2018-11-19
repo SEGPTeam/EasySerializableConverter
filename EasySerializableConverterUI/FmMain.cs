@@ -68,7 +68,6 @@ namespace EasySerializableConverterUI
                         foreach (var ele in outputList)
                         {
                             string path = sfd.FileName.Substring(0, sfd.FileName.Length - 4) + " " + ele.InstanceName + sfd.FileName.Substring(sfd.FileName.Length - 4);
-                            MessageBox.Show(path);
                             MdCore.Serialize<ClClassData>(ele, path);
                         }
                     }
