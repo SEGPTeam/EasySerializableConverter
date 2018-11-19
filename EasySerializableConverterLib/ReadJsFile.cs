@@ -14,7 +14,7 @@ namespace EasySerializableConverterLib
         private static List<string> testByte = new List<string>();
         private static List<string> testFloat = new List<string>();
 
-        public void ReadJSFile(string path)
+        public ClClass ReadJSFile(string path)
         {
             string[] lines = File.ReadAllLines(path);
 
@@ -42,6 +42,8 @@ namespace EasySerializableConverterLib
                     }
                 }
             }
+
+            return CreateTestClassPrimitive();
 
 
         }
@@ -141,7 +143,7 @@ namespace EasySerializableConverterLib
             return false;
         }
 
-        public static ClClass CreateTestClassPrimitive()
+        public ClClass CreateTestClassPrimitive()
         {
             var output = new ClClass("Primitive Class");
 
