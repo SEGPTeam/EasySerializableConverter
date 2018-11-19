@@ -9,9 +9,10 @@ namespace EasySerializableConverterLib
 {
     public class LoadJsFile
     {
-        public static List<string> testInt = new List<string>();
-        public static List<string> testString = new List<string>();
-
+        private static List<string> testInt = new List<string>();
+        private static List<string> testString = new List<string>();
+        private static List<string> testByte = new List<string>();
+        private static List<string> testFloat = new List<string>();
 
         public void ReadJSFile(string path)
         {
@@ -26,12 +27,12 @@ namespace EasySerializableConverterLib
                 for (int i = 0; i < words.Length; i++)
                 {
                     // To check the var keyword ( int, string, float, byte)
-                    if (words[i] == "int" || words[i] == "string")
+                    if (bKeyWordChecking(words[i]))
                     {
                         // Get the words after keywords.
                         for (int j = i + 1; j < words.Length; j++)
                         {
-                            if (words[j] != "static")
+                            if (words[j] != "static" && !bCheckingIsFunction(words, j, words.Length))
                             {
 
                                 InputNametoList(words[i], words[j]);
@@ -45,22 +46,74 @@ namespace EasySerializableConverterLib
 
         }
 
+        private bool bCheckingIsFunction(string[] sWord, int iCurPos, int iLength)
+        {
+            //Check previous words contain "(" or not
+            if (sWord[iCurPos - 1].Contains("("))
+            {
+                return true;
+            }
+
+            if (sWord[iCurPos].Contains("(") || sWord[iCurPos].Contains(")"))
+            {
+                return true;
+            }
+
+            Console.WriteLine("iCur :" + iCurPos + " iLength " + iLength);
+
+            if (iCurPos + 1 < iLength && sWord[iCurPos + 1].Contains("(") || iCurPos + 1 < iLength && sWord[iCurPos + 1].Contains(")"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private string SpecialWordHandler(string sWord)
+        {
+
+            if (sWord.Contains("="))
+            {
+                return sWord.Split('=')[0];
+            }
+            else if (sWord.Contains("{"))
+            {
+                return sWord.Split('{')[0];
+            }
+            else if (sWord.Contains(";"))
+            {
+                return sWord.Split(';')[0];
+            }
+
+            return sWord;
+        }
 
         private void InputNametoList(string sKeyWord, string sName)
         {
             if (sName == null)
                 return;
 
+            sName = SpecialWordHandler(sName);
+
             switch (sKeyWord)
             {
                 case "int":
                     testInt.Add(sName);
                     break;
+                case "Byte":
+                    testByte.Add(sName);
+                    break;
+                case "String":
                 case "string":
 
                     testString.Add(sName);
 
                     break;
+                case "float":
+                    testFloat.Add(sName);
+
+                    break;
+
                 case "default":
 
                     break;
@@ -73,7 +126,10 @@ namespace EasySerializableConverterLib
             switch (sKeyWord)
             {
                 case "int":
+                case "Byte":
+                case "String":
                 case "string":
+                case "float":
 
                     return true;
 
@@ -96,6 +152,16 @@ namespace EasySerializableConverterLib
             foreach (string sName in testString)
             {
                 output.Fields.Add(new ClField(sName, typeof(string)));
+            }
+            foreach (string sName in testByte)
+            {
+                output.Fields.Add(new ClField(sName, typeof(Byte)));
+
+            }
+            foreach (string sName in testFloat)
+            {
+                output.Fields.Add(new ClField(sName, typeof(float)));
+
             }
 
             return output;
