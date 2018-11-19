@@ -13,6 +13,8 @@ namespace EasySerializableConverterLib
         private static List<string> testString = new List<string>();
         private static List<string> testByte = new List<string>();
         private static List<string> testFloat = new List<string>();
+        private static List<string> testListInt = new List<string>();
+        private static List<string> testListString = new List<string>();
 
         public ClClass ReadJSFile(string path)
         {
@@ -35,7 +37,10 @@ namespace EasySerializableConverterLib
                             if (words[j] != "static" && !bCheckingIsFunction(words, j, words.Length))
                             {
 
-                                InputNametoList(words[i], words[j]);
+                                if (bCorrectInput(words[j]))
+                                {
+                                    InputNametoList(words[i], words[j]);
+                                }
                                 j = words.Length;
                             }
                         }
@@ -115,13 +120,40 @@ namespace EasySerializableConverterLib
                     testFloat.Add(sName);
 
                     break;
+                case "List<int>":
+                case "<int>":
+                    testListInt.Add(sName);
 
+                    break;
+                case "List<string>":
+                case "List<String>":
+                case "<String>":
+                case "<string>":
+                    testListString.Add(sName);
+
+                    break;
                 case "default":
 
                     break;
             }
 
         }
+
+        private bool bCorrectInput(string sWord)
+        {
+            if (sWord.Contains("<") || sWord.Contains(">"))
+            {
+                return false;
+            }
+            else if (sWord.Contains("-") || sWord.Contains("~"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
 
         private bool bKeyWordChecking(string sKeyWord)
         {
@@ -132,7 +164,13 @@ namespace EasySerializableConverterLib
                 case "String":
                 case "string":
                 case "float":
-
+                case "List<int>":
+                case "<int>":
+                case "List<string>":
+                case "List<String>":
+                case "<String>":
+                case "<string>":
+                   
                     return true;
 
                 case "default":
@@ -164,6 +202,16 @@ namespace EasySerializableConverterLib
             {
                 output.Fields.Add(new ClField(sName, typeof(float)));
 
+            }
+
+            foreach (string sName in testListInt)
+            {
+                output.Fields.Add(new ClEnumerableField(sName, typeof(int)));
+            }
+
+            foreach (string sName in testListString)
+            {
+                output.Fields.Add(new ClEnumerableField(sName, typeof(string)));
             }
 
             return output;
