@@ -13,9 +13,11 @@ namespace EasySerializableConverterLib
 {
     class CreateJson
     {
-
+        //Create a Json file with obj data to user select path
         public void Json<T>(T obj,string path)
         {
+            // use Json serializer 
+            // create setting
             JsonSerializer serializer = new JsonSerializer();
             serializer.Converters.Add(new JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;
@@ -23,6 +25,7 @@ namespace EasySerializableConverterLib
             var json = new JavaScriptSerializer().Serialize(obj);
             Console.WriteLine(json);
 
+            //use streawriter to write
             using (StreamWriter sw = new StreamWriter(path))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
@@ -32,15 +35,15 @@ namespace EasySerializableConverterLib
         }
 
         //For testing data use
-        public void function1()
+        public void CallJson(string path)
         {
-            MyDate aaa = new MyDate();
-            Json<MyDate>(aaa, @"C:\json.txt");
+            MyDate Mydate1 = new MyDate();
+            Json<MyDate>(Mydate1, path);
             
         }
 
     }
-
+    //Testing data class my data
     public class MyDate
     {
         public int year;
@@ -48,11 +51,13 @@ namespace EasySerializableConverterLib
         public int day;
     }
 
+    //Testing data lad
     public class Lad
     {
         public string firstName;
         public string lastName;
         public MyDate dateOfBirth;
     }
+
 
 }
