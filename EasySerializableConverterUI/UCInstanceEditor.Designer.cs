@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.FLPMain = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // FLPMain
+            // 
+            this.FLPMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FLPMain.Location = new System.Drawing.Point(0, 0);
+            this.FLPMain.Name = "FLPMain";
+            this.FLPMain.Size = new System.Drawing.Size(761, 737);
+            this.FLPMain.TabIndex = 0;
             // 
             // UCInstanceEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.FLPMain);
             this.Name = "UCInstanceEditor";
-            this.Size = new System.Drawing.Size(671, 640);
+            this.Size = new System.Drawing.Size(761, 737);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel FLPMain;
     }
 }

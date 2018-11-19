@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EasySerializableConverterLib;
 
 namespace EasySerializableConverterUI
 {
@@ -15,6 +16,12 @@ namespace EasySerializableConverterUI
         public UCInstanceEditor()
         {
             InitializeComponent();
+        }
+
+        public ClClassData OutputInstance()
+        {
+            var output = new ClClassData();
+            return output;
         }
     }
 }
