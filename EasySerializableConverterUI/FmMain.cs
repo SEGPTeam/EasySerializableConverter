@@ -37,6 +37,17 @@ namespace EasySerializableConverterUI
 
         private void BtnTestB_Click(object sender, EventArgs e)
         {
+            LanguageList = new List<FieldUIs.UCInstanceEditor>();
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "C# source code(*.cs) | *.cs";
+            DialogResult result = ofd.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                var ljson = new LoadJsFile();
+                InputClass = ljson.ReadJSFile(ofd.FileName);
+                button1.PerformClick();
+
+            }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
