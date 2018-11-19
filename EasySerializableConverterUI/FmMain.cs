@@ -18,90 +18,42 @@ namespace EasySerializableConverterUI
             InitializeComponent();
             
         }
+        
 
-        private void DeployClass(ClClass input)
-        {
-            FLPMain.Controls.Clear();
-            InputClass = input;
-            foreach (var ele in input.Fields)
-            {
-                if (ele.GetType() == typeof(ClEnumerableField))
-                {
-                    var uc = new FieldUIs.UCEnumerableUI(ele);
-                    uc.Parent = FLPMain;
-                }
-                else
-                {
-
-                    var uc = new FieldUIs.UCPrimitiveUI(ele);
-                    uc.Parent = FLPMain;
-                }
-            }
-        }
-
-        //TODO these should be removed and replaced with a source file (.js .ts .cs) reader that outputs a ClClass instance.
         private void BtnTestA_Click(object sender, EventArgs e)
         {
-            DeployClass(TTestData.CreateTestClassPrimitive());
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "javascript(*.js) | *.js";
+            DialogResult result = ofd.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                var ljson = new LoadJsFile();
+                InputClass = ljson.ReadJSFile(ofd.FileName);
+                button1.PerformClick();
+
+            }
         }
 
         private void BtnTestB_Click(object sender, EventArgs e)
         {
-            DeployClass(TTestData.CreateTestClassEnumerable());
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            var output = new ClClassData(TBInstanceName.Text, InputClass.ClassName, new List<ClFieldData>(), new List<ClEnumerableFieldData>());
 
-            bool error = false;
-            foreach (Control c in FLPMain.Controls)
+        }
+
+        public List<FieldUIs.UCInstanceEditor> LanguageList { get; set; }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (InputClass != null)
             {
-                if (c is FieldUIs.UCPrimitiveUI)
-                {
-                    if ((c as FieldUIs.UCPrimitiveUI).Error == true)
-                    {
-                        error = true;
-                    }
-                }
-                else if (c is FieldUIs.UCEnumerableUI)
-                {
+                var ucie = new FieldUIs.UCInstanceEditor(InputClass);
+                ucie.Dock = DockStyle.Fill;
+                var tp = new TabPage("Language " + tabControl1.TabPages.Count.ToString());
+                tp.Controls.Add(ucie);
+                tabControl1.TabPages.Add(tp);
 
-                    if ((c as FieldUIs.UCEnumerableUI).Error == true)
-                    {
-                        error = true;
-                    }
-                }
-            }
-            
-
-            if (!error) // if there are no errors
-            {
-
-                foreach (Control c in FLPMain.Controls)
-                {
-                    if (c is FieldUIs.UCPrimitiveUI)
-                    {
-                        output.FieldDatas.Add((c as FieldUIs.UCPrimitiveUI).OutputData());
-                    }
-                    else if (c is FieldUIs.UCEnumerableUI)
-                    {
-                        output.EnumerableFieldDatas.Add((c as FieldUIs.UCEnumerableUI).OutputData());
-                    }
-                }
-                //Now output is ready to be serialized
-
-                var sfd = new SaveFileDialog();
-                sfd.Filter = "XML file as txt (*.txt)|*.txt|XML file as xml (*.xml)|*.xml";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    MdCore.Serialize<ClClassData>(output, sfd.FileName);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error: there are syntax errors in the instance editor.");
             }
         }
     }
