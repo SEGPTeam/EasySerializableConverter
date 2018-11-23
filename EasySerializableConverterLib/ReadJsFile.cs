@@ -9,13 +9,14 @@ namespace EasySerializableConverterLib
 {
     public class LoadJsFile
     {
-        private static List<string> testInt = new List<string>();
-        private static List<string> testString = new List<string>();
-        private static List<string> testByte = new List<string>();
-        private static List<string> testFloat = new List<string>();
-        private static List<string> testListInt = new List<string>();
-        private static List<string> testListString = new List<string>();
+        private static List<string> testInt = new List<string>();           // List of string to store the file int variable name
+        private static List<string> testString = new List<string>();        // List of string to store the file string variable name
+        private static List<string> testByte = new List<string>();          // List of string to store the file byte variable name
+        private static List<string> testFloat = new List<string>();         // List of string to store the file float variable name
+        private static List<string> testListInt = new List<string>();       // List of string to store the file List int variable name
+        private static List<string> testListString = new List<string>();    // List of string to store the file List variable name
 
+        // read js file and return to ClClass
         public ClClass ReadJSFile(string path)
         {
             string[] lines = File.ReadAllLines(path);
@@ -53,6 +54,7 @@ namespace EasySerializableConverterLib
 
         }
 
+        // To check this line whether is a function not that. to check does it contain those special word
         private bool bCheckingIsFunction(string[] sWord, int iCurPos, int iLength)
         {
             //Check previous words contain "(" or not
@@ -61,14 +63,14 @@ namespace EasySerializableConverterLib
                 return true;
             }
 
-            if (sWord[iCurPos].Contains("(") || sWord[iCurPos].Contains(")"))
+            //Check current words is it contain any special word
+            if (sWord[iCurPos].Contains("(") || sWord[iCurPos].Contains(")") || sWord[iCurPos].Contains(",") )
             {
                 return true;
             }
 
-            Console.WriteLine("iCur :" + iCurPos + " iLength " + iLength);
-
-            if (iCurPos + 1 < iLength && sWord[iCurPos + 1].Contains("(") || iCurPos + 1 < iLength && sWord[iCurPos + 1].Contains(")"))
+            //Check next words is it contain any special word
+            if (iCurPos + 1 < iLength && (sWord[iCurPos + 1].Contains("(") || sWord[iCurPos + 1].Contains(")") || sWord[iCurPos].Contains(",")))
             {
                 return true;
             }
@@ -76,6 +78,7 @@ namespace EasySerializableConverterLib
             return false;
         }
 
+        // Remove the special char which the words contain
         private string SpecialWordHandler(string sWord)
         {
 
@@ -95,6 +98,7 @@ namespace EasySerializableConverterLib
             return sWord;
         }
 
+        // Save those value name into the list for output use
         private void InputNametoList(string sKeyWord, string sName)
         {
             if (sName == null)
@@ -139,6 +143,7 @@ namespace EasySerializableConverterLib
 
         }
 
+        // to check whether the input words is correct or not.
         private bool bCorrectInput(string sWord)
         {
             if (sWord.Contains("<") || sWord.Contains(">"))
@@ -154,7 +159,7 @@ namespace EasySerializableConverterLib
         }
 
 
-
+        // To check whether this line contain the var key word
         private bool bKeyWordChecking(string sKeyWord)
         {
             switch (sKeyWord)
@@ -181,6 +186,7 @@ namespace EasySerializableConverterLib
             return false;
         }
 
+        // Read all list and save to ouput fileds to ClClass
         public ClClass CreateTestClassPrimitive()
         {
             var output = new ClClass("Primitive Class");
